@@ -1,0 +1,15 @@
+{
+  "name": "@sibianul/homebridge-led-switch",
+  "version": "1.0.0",
+  "description": "Turn ON and OFF the LED lights in my office",
+  "license": "MIT",
+  "repository": "sibianul/homebridge-led-switch",
+  "main": "index.js",
+  "keywords": [
+    "homebridge-led-switch",
+    "npm",
+    "package",
+    "sibianul",
+    "homebridge"
+  ]
+}
