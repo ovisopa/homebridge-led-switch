@@ -6,6 +6,17 @@ module.exports = function (homebridge) {
   homebridge.registerAccessory("homebridge-led-switch", "MyAwesomeSwitch", mySwitch);
 };
 
+
+const request = require('request');
+const url = require('url');
+
+function mySwitch(log, config) {
+  this.log = log;
+  this.getUrl = url.parse(config['getUrl']);
+  this.postUrl = url.parse(config['postUrl']);
+}
+
+
 mySwitch.prototype = {
   getServices: function () {
     let informationService = new Service.AccessoryInformation();
@@ -24,18 +35,9 @@ mySwitch.prototype = {
     this.switchService = switchService;
     return [informationService, switchService];
   }
-};
+//};
 
-const request = require('request');
-const url = require('url');
-
-function mySwitch(log, config) {
-  this.log = log;
-  this.getUrl = url.parse(config['getUrl']);
-  this.postUrl = url.parse(config['postUrl']);
-}
-
-mySwitch.prototype = {
+//mySwitch.prototype = {
 
   getSwitchOnCharacteristic: function (next) {
     const me = this;
